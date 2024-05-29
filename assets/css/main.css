@@ -13,15 +13,15 @@
 /* Fonts */
 :root {
   --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-primary: "Amatic SC", sans-serif;
-  --font-secondary: "Inter", sans-serif;
+  --font-primary: "Le Petit Coclon", sans-serif;
+  --font-secondary: "Adigiana Toybox", sans-serif;
 }
 
 /* Colors */
 :root {
   --color-default: #212529;
-  --color-primary: #ce1212;
-  --color-secondary: #37373f;
+  --color-primary: #E96FA6;
+  --color-secondary: #F2C5A7;
 }
 
 /* Smooth scroll behavior */
@@ -275,7 +275,7 @@ section {
   font-weight: 700;
   color: #000;
   margin: 0;
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
 }
 
 .header .logo h1 span {
@@ -1174,6 +1174,10 @@ section {
   min-height: 500px;
   background-size: cover;
   background-position: center;
+}
+
+.book-a-table{
+background-color: #FFd;
 }
 
 .book-a-table .reservation-form-bg {
