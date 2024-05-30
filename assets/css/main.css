@@ -20,8 +20,8 @@
 /* Colors */
 :root {
   --color-default: #212529;
-  --color-primary: #E96FA6;
-  --color-secondary: #F2C5A7;
+  --color-primary: #93DBFE;
+  --color-secondary: #FCACD3;
 }
 
 /* Smooth scroll behavior */
@@ -44,7 +44,7 @@ a {
 }
 
 a:hover {
-  color: #ec2727;
+  color: #E96FA6 ;
   text-decoration: none;
 }
 
@@ -181,7 +181,7 @@ section {
 }
 
 .scroll-top:hover {
-  background: #ec2727;
+  background: #E96FA6;
   color: #fff;
 }
 
@@ -297,7 +297,7 @@ section {
 .header .btn-book-a-table:hover,
 .header .btn-book-a-table:focus:hover {
   color: #fff;
-  background: rgba(206, 18, 18, 0.8);
+  background: #E96FA6;
 }
 
 /*--------------------------------------------------------------
@@ -625,7 +625,7 @@ section {
 .about .play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(var(--color-primary) 50%, rgba(206, 18, 18, 0.4) 52%);
+  background: radial-gradient(var(--color-primary) 50%, #E96FA6 52%);
   border-radius: 50%;
   display: block;
   position: absolute;
@@ -646,7 +646,7 @@ section {
   animation-timing-function: steps;
   opacity: 1;
   border-radius: 50%;
-  border: 5px solid rgba(206, 18, 18, 0.7);
+  border: 5px solid #E96FA6;
   top: -15%;
   left: -15%;
   background: rgba(198, 16, 0, 0);
@@ -962,7 +962,7 @@ section {
 
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  color: #f05656;
+  color: #E96FA6;
   font-size: 26px;
   line-height: 0;
 }
@@ -1218,7 +1218,7 @@ background-color: #FFd;
 .book-a-table .php-email-form .error-message {
   display: none;
   color: #fff;
-  background: #df1529;
+  background: #E96FA6;
   text-align: left;
   padding: 15px;
   margin-bottom: 24px;
@@ -1286,7 +1286,7 @@ background-color: #FFd;
 }
 
 .book-a-table .php-email-form button[type=submit]:hover {
-  background: #ec2727;
+  background: #E96FA6;
 }
 
 @keyframes animate-loading {
@@ -1404,7 +1404,7 @@ background-color: #FFd;
 .contact .php-email-form .error-message {
   display: none;
   color: #fff;
-  background: #df1529;
+  background: #E96FA6;
   text-align: left;
   padding: 15px;
   font-weight: 600;
@@ -1472,7 +1472,7 @@ background-color: #FFd;
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #ec2727;
+  background: #E96FA6;
 }
 
 @keyframes animate-loading {
@@ -1497,10 +1497,10 @@ background-color: #FFd;
 }
 
 .hero h2 {
-  font-size: 64px;
+  font-size: 40px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: var(--color-secondary);
+  color: #E96FA6;
   font-family: var(--font-primary);
 }
 
@@ -1524,12 +1524,11 @@ background-color: #FFd;
   transition: 0.5s;
   color: #fff;
   background: var(--color-primary);
-  box-shadow: 0 8px 28px rgba(206, 18, 18, 0.2);
 }
 
 .hero .btn-book-a-table:hover {
-  background: rgba(206, 18, 18, 0.8);
-  box-shadow: 0 8px 28px rgba(206, 18, 18, 0.45);
+  background: #E96FA6;
+ 
 }
 
 .hero .btn-watch-video {
@@ -1553,7 +1552,7 @@ background-color: #FFd;
 }
 
 .hero .btn-watch-video:hover i {
-  color: rgba(206, 18, 18, 0.8);
+  color: #E96FA6;
 }
 
 @media (max-width: 640px) {
