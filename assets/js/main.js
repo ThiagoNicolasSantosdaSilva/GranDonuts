@@ -241,3 +241,50 @@
   });
 
 })();
+
+/*--------------------------------------------------------------
+# Sections & Section Header da cesta
+--------------------------------------------------------------*/
+// script.js
+
+  let cart = [];
+
+  function addToCart(item) {
+    cart.push(item);
+    updateCart();
+    updateCartCount();
+  }
+
+  function updateCart() {
+    const cartItems = document.getElementById('cart-items');
+    cartItems.innerHTML = '';
+
+    cart.forEach((item, index) => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      cartItems.appendChild(li);
+    });
+  }
+
+  function updateCartCount() {
+    const cartCount = document.getElementById('cart-count');
+    cartCount.textContent = cart.length;
+  }
+
+  function placeOrder() {
+    if (cart.length === 0) {
+      alert('Seu carrinho está vazio!');
+      return;
+    }
+
+    alert('Pedido realizado com sucesso!');
+    cart = [];
+    updateCart();
+    updateCartCount();
+  }
+
+  function toggleCart() {
+    const cartModal = document.getElementById('cartModal');
+    cartModal.style.display = cartModal.style.display === 'none' ? 'block' : 'none';
+  }
+
