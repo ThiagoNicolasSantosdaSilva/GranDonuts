@@ -64,21 +64,25 @@ h6 {
 .cart-icon {
   position: relative;
   display: inline-block;
-  margin-left: 20px;
-  color: #000;
-  font-size: 1.5rem;
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: inherit; /* Mantém a cor padrão do ícone */
 }
 
-#cart-count {
+.cart-icon .bi-cart {
+  font-size: 20px; /* Tamanho do ícone de carrinho */
+}
+
+.cart-icon #cart-count {
   position: absolute;
-  top: -10px;
-  right: -10px;
-  background: red;
+  top: -8px;
+  right: -8px;
+  background-color: #ff5722; /* Cor de fundo do contador */
   color: white;
   border-radius: 50%;
-  padding: 2px 6px;
-  font-size: 0.8rem;
+  padding: 4px 8px;
+  font-size: 8px; /* Tamanho da fonte do contador */
 }
+
 
 /*--------------------------------------------------------------
 # Sections & Section Header
@@ -604,6 +608,52 @@ section {
   border: 0;
   border-bottom: 2px solid #b6b6bf;
 }
+
+.menu .menu-item {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.menu .menu-img {
+  display: block; /* Garante que a imagem se comporte corretamente dentro do link */
+  width: 100%; /* Garante que a imagem ocupe todo o espaço disponível */
+  height: auto; /* Mantém a proporção original da imagem */
+  transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave ao hover */
+}
+
+.menu .menu-img:hover {
+  transform: scale(1.1); /* Aumenta ligeiramente o tamanho da imagem ao passar o mouse */
+}
+
+.menu .menu-item h4 {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu .menu-item p {
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.menu .menu-item .price {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.menu .menu-item button {
+  background-color: var(--color-primary);
+  
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
 
 @media (max-width: 575px) {
   .menu .nav-link {

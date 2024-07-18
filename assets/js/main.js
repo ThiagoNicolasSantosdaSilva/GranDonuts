@@ -245,46 +245,58 @@
 /*--------------------------------------------------------------
 # Sections & Section Header da cesta
 --------------------------------------------------------------*/
-// script.js
 
-  let cart = [];
 
-  function addToCart(item) {
-    cart.push(item);
-    updateCart();
-    updateCartCount();
+let cart = [];
+
+function addToCart(itemName, itemPrice) {
+  const item = {
+    name: itemName,
+    price: itemPrice
+  };
+  cart.push(item);
+  updateCart();
+  updateCartCount();
+}
+
+function updateCart() {
+  const cartItems = document.getElementById('cart-items');
+  cartItems.innerHTML = '';
+
+  cart.forEach((item, index) => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <span>${item.name}</span>
+      <span class="price">R$ ${item.price.toFixed(2)}</span>
+    `;
+    cartItems.appendChild(li);
+  });
+}
+
+function updateCartCount() {
+  const cartCount = document.getElementById('cart-count');
+  cartCount.textContent = cart.length;
+}
+
+function placeOrder() {
+  if (cart.length === 0) {
+    alert('Seu carrinho está vazio!');
+    return;
   }
 
-  function updateCart() {
-    const cartItems = document.getElementById('cart-items');
-    cartItems.innerHTML = '';
+  // Lógica para realizar o pedido
 
-    cart.forEach((item, index) => {
-      const li = document.createElement('li');
-      li.textContent = item;
-      cartItems.appendChild(li);
-    });
-  }
+  alert('Pedido realizado com sucesso!');
+  cart = [];
+  updateCart();
+  updateCartCount();
+}
 
-  function updateCartCount() {
-    const cartCount = document.getElementById('cart-count');
-    cartCount.textContent = cart.length;
-  }
+function toggleCart() {
+  const cartModal = document.getElementById('cartModal');
+  cartModal.style.display = cartModal.style.display === 'none' ? 'block' : 'none';
+}
 
-  function placeOrder() {
-    if (cart.length === 0) {
-      alert('Seu carrinho está vazio!');
-      return;
-    }
 
-    alert('Pedido realizado com sucesso!');
-    cart = [];
-    updateCart();
-    updateCartCount();
-  }
 
-  function toggleCart() {
-    const cartModal = document.getElementById('cartModal');
-    cartModal.style.display = cartModal.style.display === 'none' ? 'block' : 'none';
-  }
 
