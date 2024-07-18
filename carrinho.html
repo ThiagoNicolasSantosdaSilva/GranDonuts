@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-  <title>Gran Donuts</title>
+  <title>Gran Donuts | Carrinho</title>
   <meta content="" name="description" />
   <meta content="" name="keywords" />
 
@@ -26,55 +26,44 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/carrinho.css"/> 
+  <link href="assets/css/carrinho.css" rel="stylesheet" >
 </head>
+
 <body>
-  <header id="header" class="header fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
-        <img src="assets/img/favicon.png" alt="" />
-        <h1>Gran Donuts<span>.</span></h1>
-      </a>
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#book-a-table">Faça a sua Encomenda</a></li>
-          <li><a href="#contact">Fale Conosco</a></li>
-        </ul>
-      </nav>
-      <!-- .navbar -->
+<main class="main-section">
+  <section class="container normal-section">
+    <h2 class="section-title">Carrinho</h2>
 
-      <a href="carrinho.html" class="cart-icon" onclick="toggleCart()">
-        <i class="bi bi-cart"></i>
-        <span id="cart-count">0</span>
-      </a>
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-    </div>
-  </header>
-  <!-- End Header -->
-
-  <section class="cart-section">
-    <div class="container">
-      <main>
-        <h2>Seu Carrinho</h2>
-        <ul id="cart-items" class="cart-items">
-          <!-- Aqui serão inseridos os itens do carrinho dinamicamente -->
-        </ul>
-        <div class="cart-actions">
-          <button onclick="placeOrder()">Finalizar Pedido</button>
-          <button onclick="clearCart()">Limpar Carrinho</button>
-        </div>
-      </main>
-    </div>
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th class="table-head-item first-col">Item</th>
+          <th class="table-head-item second-col">Preço</th>
+          <th class="table-head-item third-col">Quantidade</th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <!-- Aqui serão adicionados dinamicamente os produtos do carrinho -->
+      </tbody>
+    
+      <tfoot>
+        <tr>
+          <td colspan="3" class="cart-total-container">
+            <strong>Total</strong>
+            <span>R$ 0,00</span>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+    
+    <button type="button" class="purchase-button">Finalizar Compra</button>
   </section>
+</main>
 
-  <footer>
-    <!-- Rodapé opcional -->
-  </footer>
+<!-- Certifique-se de fechar a tag script corretamente -->
+<script src="assets/js/carrinho.js" async></script>
 
-  <script src="assets/js/carrinho.js"></script> <!-- Incluir seu arquivo de script JavaScript -->
 </body>
 </html>
