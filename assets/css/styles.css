@@ -1,152 +1,155 @@
+Deixe reativo para todas as telas que existem 
+
 /* CSS para a tabela do carrinho de compras */
 .cart-table {
-  width: 100%; /* A largura da tabela será 100% do seu contêiner */
-  border-collapse: collapse; /* Remove os espaços entre as bordas das células */
+  width: 100%;
+  border-collapse: collapse;
   margin: 0; /* Remove a margem padrão */
-  text-align: center; /* Centraliza o texto dentro das células */
+  text-align: center;
 }
 
 .cart-table td {
-  padding: 10px; /* Adiciona preenchimento de 10px ao redor do conteúdo da célula */
-  vertical-align: middle; /* Alinha o conteúdo verticalmente ao centro */
-  border-bottom: 1px solid #ddd; /* Adiciona uma linha de separação entre as linhas */
+  padding: 10px;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd; /* Linha de separação entre as linhas */
 }
 
 .product-identification {
-  text-align: left; /* Alinha o texto à esquerda */
+  text-align: left;
 }
 
 .cart-product-title {
-  font-weight: bold; /* Define o peso da fonte como negrito */
+  font-weight: bold;
 }
 
 .cart-product-price {
-  font-weight: bold; /* Define o peso da fonte como negrito */
+  font-weight: bold;
 }
 
 .product-qtd-input {
-  width: 60px; /* Define a largura do campo de entrada */
-  text-align: center; /* Centraliza o texto dentro do campo de entrada */
-  margin: 0 10px; /* Adiciona margem de 10px nos lados direito e esquerdo */
-  border: 1px solid #ddd; /* Define uma borda cinza clara */
-  border-radius: 5px; /* Define cantos arredondados com raio de 5px */
-  padding: 5px; /* Adiciona preenchimento de 5px dentro do campo */
+  width: 60px;
+  text-align: center;
+  margin: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .button-group {
-  display: flex; /* Usa layout flexível para os botões */
-  align-items: center; /* Alinha os itens ao centro verticalmente */
-  gap: 5px; /* Adiciona espaço de 5px entre os botões */
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Espaço entre os botões */
 }
 
 .button-group button {
-  padding: 5px 10px; /* Adiciona preenchimento de 5px verticalmente e 10px horizontalmente */
-  border: 1px solid #ddd; /* Define uma borda cinza clara */
-  background-color: #f8f9fa; /* Define a cor de fundo como cinza claro */
-  border-radius: 5px; /* Define cantos arredondados com raio de 5px */
-  cursor: pointer; /* Altera o cursor para uma mãozinha ao passar o mouse */
-  font-size: 0.875rem; /* Define o tamanho da fonte */
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.875rem;
 }
 
 .button-group button:hover {
-  background-color: #000; /* Muda a cor de fundo para preto ao passar o mouse */
+  background-color: #000;
 }
 
 .remove-product-button {
-  background-color: #E96FA6; /* Define a cor de fundo rosa */
-  color: white; /* Define a cor do texto como branco */
-  border: none; /* Remove a borda */
-  margin-top: 10px; /* Adiciona margem superior de 10px */
-  margin-left: 100px; /* Adiciona margem esquerda de 100px */
-  border-radius: 20px; /* Define cantos arredondados com raio de 20px */
-  font-weight: 50px; /* Define o peso da fonte (deveria ser 'font-weight: bold' para negrito) */
+  background-color: #E96FA6;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  margin-left: 100px;
+  border-radius: 20px;
+  font-weight: 50px;
 }
 
 .remove-product-button:hover {
-  background-color: #E96FA6; /* Mantém a mesma cor de fundo ao passar o mouse */
+  background-color: #E96FA6;
 }
 
 /* Estilo específico para a seção do carrinho */
 .cart-section {
-  position: fixed; /* Posiciona a seção fixamente na tela */
-  top: 0; /* Alinha ao topo da tela */
-  right: -350px; /* Inicialmente oculta fora da tela à direita */
-  width: 350px; /* Define a largura da seção */
-  height: 100%; /* Ajusta para a altura total da tela */
-  background-color: #fff; /* Define a cor de fundo como branco */
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
-  transition: right 0.3s ease; /* Anima a mudança de posição para suavidade */
-  z-index: 1000; /* Garante que a seção esteja acima do conteúdo */
+  position: fixed;
+  top: 0;
+  right: -350px; /* Inicialmente oculto */
+  width: 350px;
+  height: 100%; /* Ajustado para altura total da tela */
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 1000; /* Garante que o carrinho está acima do conteúdo */
 }
 
 .cart-section.open {
-  right: 0; /* Mostra a aba lateral quando a classe 'open' é adicionada */
+  right: 0; /* Mostra a aba lateral */
 }
 
 .cart-header {
-  display: flex; /* Usa layout flexível */
-  justify-content: space-between; /* Espaça os itens uniformemente */
-  align-items: center; /* Alinha os itens verticalmente ao centro */
-  padding: 10px; /* Adiciona preenchimento de 10px */
-  background-color: #93dbfe; /* Define a cor de fundo azul claro */
-  color: #fff; /* Define a cor do texto como branco */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #93dbfe;
+  color: #fff;
 }
 
 .section-title {
-  margin: 0; /* Remove a margem padrão */
-  font-size: 1.25rem; /* Define o tamanho da fonte */
+  margin: 0;
+  font-size: 1.25rem;
 }
 
 .close-cart-button {
-  background-color: transparent; /* Define a cor de fundo como transparente */
-  color: #000; /* Define a cor do texto como preto */
-  border: none; /* Remove a borda */
-  cursor: pointer; /* Altera o cursor para uma mãozinha ao passar o mouse */
-  font-size: 1rem; /* Define o tamanho da fonte */
+  background-color: transparent;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 .close-cart-button:hover {
-  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+  text-decoration: underline;
+  
 }
 
 .cart-content {
-  padding: 10px; /* Adiciona preenchimento de 10px */
+  padding: 10px;
   height: calc(100% - 60px); /* Ajusta a altura do conteúdo do carrinho */
-  overflow-y: auto; /* Adiciona rolagem vertical */
+  overflow-y: auto;
 }
 
 .cart-total-container {
-  text-align: right; /* Alinha o texto à direita */
-  padding: 10px; /* Adiciona preenchimento de 10px */
-  font-weight: bold; /* Define o peso da fonte como negrito */
+  text-align: right;
+  padding: 10px;
+  font-weight: bold;
 }
 
 .purchase-button {
-  display: block; /* Define o botão como um bloco */
-  width: 100%; /* Define a largura para 100% do contêiner */
-  padding: 10px; /* Adiciona preenchimento de 10px */
-  margin-top: 10px; /* Adiciona margem superior de 10px */
-  background-color: #fcacd3; /* Define a cor de fundo rosa claro */
-  color: #000; /* Define a cor do texto como preto */
-  font-weight: bold; /* Define o peso da fonte como negrito */
-  border: none; /* Remove a borda */
-  cursor: pointer; /* Altera o cursor para uma mãozinha ao passar o mouse */
-  font-size: 1rem; /* Define o tamanho da fonte */
-  border-radius: 20px; /* Define cantos arredondados com raio de 20px */
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #fcacd3;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 20px;
 }
 
 .purchase-button:hover {
-  background-color: #fcacd3; /* Mantém a mesma cor de fundo ao passar o mouse */
+  background-color: #fcacd3;
 }
 
 .cart-icon-button {
-  width: 100px; /* Define a largura do botão */
-  height: 100px; /* Define a altura do botão */
-  border: none; /* Remove a borda */
-  color: #fff; /* Define a cor do texto como branco */
-  border-radius: 20px; /* Define cantos arredondados com raio de 20px */
-}
+  width: 100px;
+  height: 100px;
+  border: none;
+  color: #fff;border-radius: 20px;
+  
 
+  }
 /* Media Queries para responsividade */
 @media (max-width: 768px) {
   .cart-section {
@@ -174,7 +177,7 @@
 @media (max-width: 480px) {
   .cart-header {
     flex-direction: column; /* Ajusta o layout para coluna em telas muito pequenas */
-    align-items: flex-start; /* Alinha os itens ao início */
+    align-items: flex-start;
   }
 
   .close-cart-button {
@@ -183,27 +186,5 @@
 
   .cart-table th, .cart-table td {
     font-size: 0.875rem; /* Ajusta o tamanho da fonte em telas pequenas */
-  }
-
-  /* Transforma a tabela em layout de bloco em telas muito pequenas */
-  .cart-table, .cart-table tr, .cart-table td {
-    display: block; /* Define como blocos */
-    width: 100%; /* Define a largura para 100% */
-  }
-
-  .cart-table td {
-    text-align: right; /* Alinha o texto à direita */
-    position: relative; /* Define a posição como relativa */
-    padding-left: 50%; /* Adiciona preenchimento à esquerda */
-  }
-
-  .cart-table td:before {
-    content: attr(data-label); /* Adiciona um conteúdo baseado no atributo data-label */
-    position: absolute; /* Define a posição como absoluta */
-    left: 0; /* Alinha à esquerda */
-    width: 50%; /* Define a largura para 50% */
-    padding-left: 10px; /* Adiciona preenchimento à esquerda */
-    font-weight: bold; /* Define o peso da fonte como negrito */
-    text-align: left; /* Alinha o texto à esquerda */
   }
 }
