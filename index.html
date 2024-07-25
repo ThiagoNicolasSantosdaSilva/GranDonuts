@@ -706,262 +706,225 @@
           <h2>Faça a Sua Encomenda</h2>
           <p>Encomende <span>os melhores</span> Donuts</p>
         </div>
-
+    
         <div class="row g-0">
-          <div
-            class="col-lg-4 reservation-img"
-            style="background-image: url(assets/img/reservation.jpg)"
-            data-aos="zoom-out"
-            data-aos-delay="200"
-          ></div>
-
+          <div class="col-lg-4 reservation-img" style="background-image: url(assets/img/reservation.jpg)" data-aos="zoom-out" data-aos-delay="200"></div>
+    
           <div class="col-lg-8 d-flex align-items-center reservation-form-bg">
-            <form
-              action="forms/book-a-table.php"
-              method="post"
-              role="form"
-              class="php-email-form"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+            <form id="orderForm" onsubmit="sendToWhatsApp(event)" class="php-email-form">
+
               <div class="row gy-4">
                 <div class="col-lg-4 col-md-6">
-                  <input
-                    type="text"
-                    name="name"
-                    class="form-control"
-                    id="name"
-                    placeholder="Seu Nome"
-                    data-rule="minlen:4"
-                    data-msg="Please enter at least 4 chars"
-                  />
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" data-rule="minlen:4" data-msg="Por favor insira seu nome" required />
                   <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                  <input
-                    type="email"
-                    class="form-control"
-                    name="email"
-                    id="email"
-                    placeholder="Seu Email"
-                    data-rule="email"
-                    data-msg="Please enter a valid email"
-                  />
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Seu Email" data-rule="email" data-msg="Por favor insira um email valido!" required />
                   <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                  <input
-                    type="tel"
-                    class="form-control"
-                    name="phone"
-                    id="Phone"
-                    placeholder="Seu Telefone"
-                    data-rule="minlen:4"
-                    data-msg="Please enter at least 4 chars"
-                  />
+                  <input type="tel" class="form-control" name="phone" id="phone" placeholder="Seu Telefone" data-rule="minlen:4" data-msg="Por favor insira um telefone valido" required />
                   <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                  <input
-                    type="date"
-                    name="date"
-                    class="form-control"
-                    id="date"
-                    placeholder="Data"
-                    data-rule="minlen:4"
-                    data-msg="Please enter at least 4 chars"
-                  />
+                  <input type="date" name="date" class="form-control" id="date" placeholder="Data" data-rule="minlen:4" data-msg="Por favor insira a data " required />
                   <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                  <input
-                    type="time"
-                    class="form-control"
-                    name="time"
-                    id="time"
-                    placeholder="Horario"
-                    data-rule="minlen:4"
-                    data-msg="Please enter at least 4 chars"
-                  />
+                  <input type="time" class="form-control" name="time" id="time" placeholder="Horario" data-rule="minlen:4" data-msg="Por favor insirao horario" required />
                   <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                  <input
-                    type="number"
-                    class="form-control"
-                    name="people"
-                    id="people"
-                    placeholder="nº de pessoas"
-                    data-rule="minlen:1"
-                    data-msg="Please enter at least 1 chars"
-                  />
+                  <input type="number" class="form-control" name="people" id="people" placeholder="nº de pessoas" data-rule="minlen:1" data-msg="Por favor insira a quantidade de pessoas" required />
                   <div class="validate"></div>
                 </div>
               </div>
               <div class="form-group mt-3">
-                <textarea
-                  class="form-control"
-                  name="message"
-                  rows="5"
-                  placeholder="Menssagem"
-                ></textarea>
+                <textarea class="form-control" name="message" rows="5" placeholder="Menssagem" required></textarea>
                 <div class="validate"></div>
               </div>
-              <div class="mb-3">
-                <div class="loading">Carregando</div>
-                <div class="error-message"></div>
-                <div class="sent-message">
-                  Your booking request was sent. We will call back or send an
-                  Email to confirm your reservation. Obrigado!
-                </div>
-              </div>
+             
               <div class="text-center">
                 <button type="submit">Enviar Pedido</button>
               </div>
             </form>
           </div>
-          <!-- End Reservation Form -->
         </div>
       </div>
     </section>
+    
+    <script>
+      function sendToWhatsApp(event) {
+        event.preventDefault();
+    
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var phone = document.getElementById('phone').value;
+        var date = document.getElementById('date').value;
+        var time = document.getElementById('time').value;
+        var people = document.getElementById('people').value;
+        var message = document.querySelector('textarea[name="message"]').value;
+    
+        var phoneNumber = '5521980556251'; // Substitua pelo número do WhatsApp desejado
+        var formattedMessage =  `*Detalhes da Encomenda*%0A%0A *Nome:* ${name}%0A *Email:* ${email}%0A *Telefone:* ${phone}%0A *Data:* ${date}%0A *Horário:* ${time}%0A *Número de Pessoas:* ${people}%0A *Mensagem:* ${message}`;
+        var whatsappUrl = `https://wa.me/${phoneNumber}?text=${formattedMessage}`;
+    
+        window.open(whatsappUrl, '_blank');
+      }
+    </script>
+    
     <!-- End Book A Table Section -->
 
     <!-- ======= Gallery Section ======= -->
     <!-- End Gallery Section -->
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h2>Contato</h2>
-          <p>precisa de ajuda? <span>Contate-Nos</span></p>
+<section id="contact" class="contact">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header">
+      <h2>Contato</h2>
+      <p>precisa de ajuda? <span>Contate-Nos</span></p>
+    </div>
+
+    <div class="mb-3">
+      <iframe
+        style="border: 0; width: 100%; height: 350px"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.7364199711733!2d-43.27413182575017!3d-22.70085403054165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9973e07f4e47e1%3A0x55552887d477b1b3!2sCol%C3%A9gio%20Seice!5e0!3m2!1spt-BR!2sbr!4v1717024198548!5m2!1spt-BR!2sbr"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+    <!-- End Google Maps -->
+
+    <div class="row gy-4">
+      <div class="col-md-6">
+        <div class="info-item d-flex align-items-center">
+          <i class="icon bi bi-map flex-shrink-0"></i>
+          <div>
+            <h3>Nosso Endereço</h3>
+            <p>Av. São Paulo, 89 - Campos Elíseos, Duque de Caxias - RJ, 25225-660</p>
+          </div>
         </div>
-
-        <div class="mb-3">
-          <iframe
-            style="border: 0; width: 100%; height: 350px"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.7364199711733!2d-43.27413182575017!3d-22.70085403054165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9973e07f4e47e1%3A0x55552887d477b1b3!2sCol%C3%A9gio%20Seice!5e0!3m2!1spt-BR!2sbr!4v1717024198548!5m2!1spt-BR!2sbr"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-        <!-- End Google Maps -->
-
-        <div class="row gy-4">
-          <div class="col-md-6">
-            <div class="info-item d-flex align-items-center">
-              <i class="icon bi bi-map flex-shrink-0"></i>
-              <div>
-                <h3>Nosso Endereço</h3>
-                <p>
-                  Av. São Paulo, 89 - Campos Elíseos, Duque de Caxias - RJ,
-                  25225-660
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- End Info Item -->
-
-          <div class="col-md-6">
-            <div class="info-item d-flex align-items-center">
-              <i class="icon bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email</h3>
-                <p>grandonutstcc@gmail.com</p>
-              </div>
-            </div>
-          </div>
-          <!-- End Info Item -->
-
-          <div class="col-md-6">
-            <div class="info-item d-flex align-items-center">
-              <i class="icon bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Telefone</h3>
-                <p>(21)9 9376-9088</p>
-              </div>
-            </div>
-          </div>
-          <!-- End Info Item -->
-
-          <div class="col-md-6">
-            <div class="info-item d-flex align-items-center">
-              <i class="icon bi bi-share flex-shrink-0"></i>
-              <div>
-                <h3>Horario de Funcionamento:</h3>
-                <div>
-                  <strong>Segunda-Sábado:</strong> 10AM - 19PM; <br />
-                  <strong>Domingo:</strong> Fechado
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Info Item -->
-        </div>
-
-        <form
-          action="forms/contact.php"
-          method="post"
-          role="form"
-          class="php-email-form p-3 p-md-4"
-        >
-          <div class="row">
-            <div class="col-xl-6 form-group">
-              <input
-                type="text"
-                name="name"
-                class="form-control"
-                id="name"
-                placeholder="Seu Nome"
-                required
-              />
-            </div>
-            <div class="col-xl-6 form-group">
-              <input
-                type="email"
-                class="form-control"
-                name="email"
-                id="email"
-                placeholder="Seu Email"
-                required
-              />
-            </div>
-          </div>
-          <div class="form-group">
-            <input
-              type="text"
-              class="form-control"
-              name="subject"
-              id="subject"
-              placeholder="Assunto"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <textarea
-              class="form-control"
-              name="message"
-              rows="5"
-              placeholder="Menssagem"
-              required
-            ></textarea>
-          </div>
-          <div class="my-3">
-            <div class="loading">Carregando</div>
-            <div class="error-message"></div>
-            <div class="sent-message">
-              Sua Mensagem foi enviada com Sucesso. Obrigado!
-            </div>
-          </div>
-          <div class="text-center">
-            <button type="submit">Enviar Menssagem</button>
-          </div>
-        </form>
-        <!--End Contact Form -->
       </div>
-    </section>
-    <!-- End Contact Section -->
+      <!-- End Info Item -->
+
+      <div class="col-md-6">
+        <div class="info-item d-flex align-items-center">
+          <i class="icon bi bi-envelope flex-shrink-0"></i>
+          <div>
+            <h3>Email</h3>
+            <p>grandonutstcc@gmail.com</p>
+          </div>
+        </div>
+      </div>
+      <!-- End Info Item -->
+
+      <div class="col-md-6">
+        <div class="info-item d-flex align-items-center">
+          <i class="icon bi bi-telephone flex-shrink-0"></i>
+          <div>
+            <h3>Telefone</h3>
+            <p>(21)9 9376-9088</p>
+          </div>
+        </div>
+      </div>
+      <!-- End Info Item -->
+
+      <div class="col-md-6">
+        <div class="info-item d-flex align-items-center">
+          <i class="icon bi bi-share flex-shrink-0"></i>
+          <div>
+            <h3>Horario de Funcionamento:</h3>
+            <div>
+              <strong>Segunda-Sábado:</strong> 10AM - 19PM; <br />
+              <strong>Domingo:</strong> Fechado
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Info Item -->
+    </div>
+
+    <form
+      id="contactForm"
+      onsubmit="sendContactToWhatsApp(event)"
+      class="php-email-form p-3 p-md-4"
+    >
+      <div class="row">
+        <div class="col-xl-6 form-group">
+          <input
+            type="text"
+            name="name"
+            class="form-control"
+            id="name"
+            placeholder="Seu Nome"
+            required
+          />
+        </div>
+        <div class="col-xl-6 form-group">
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            id="email"
+            placeholder="Seu Email"
+            required
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="subject"
+          id="subject"
+          placeholder="Assunto"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <textarea
+          class="form-control"
+          name="message"
+          rows="5"
+          placeholder="Menssagem"
+          required
+        ></textarea>
+      </div>
+      <div class="my-3">
+        <div class="loading">Carregando</div>
+        <div class="error-message"></div>
+        <div class="sent-message">
+          Sua Mensagem foi enviada com Sucesso. Obrigado!
+        </div>
+      </div>
+      <div class="text-center">
+        <button type="submit">Enviar Menssagem</button>
+      </div>
+    </form>
+    <!--End Contact Form -->
+  </div>
+</section>
+<!-- End Contact Section -->
+
+<script>
+  function sendContactToWhatsApp(event) {
+    event.preventDefault();
+
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var subject = document.getElementById('subject').value;
+    var message = document.querySelector('textarea[name="message"]').value;
+
+    var phoneNumber = '5521980556251'; // Substitua pelo número do WhatsApp desejado
+    var formattedMessage = `*Detalhes do Contato*%0A%0A*Nome:* ${name}%0A*Email:* ${email}%0A*Assunto:* ${subject}%0A*Mensagem:* ${message}`;
+    var whatsappUrl = `https://wa.me/${phoneNumber}?text=${formattedMessage}`;
+
+    window.open(whatsappUrl, '_blank');
+  }
+</script>
+
   </main>
   <!-- End #main -->
 
