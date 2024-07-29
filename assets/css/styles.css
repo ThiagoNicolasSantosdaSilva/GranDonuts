@@ -16,10 +16,7 @@
   text-align: left; /* Alinha o texto à esquerda */
 }
 
-.cart-product-title {
-  font-weight: bold; /* Define o texto em negrito */
-}
-
+.cart-product-title,
 .cart-product-price {
   font-weight: bold; /* Define o texto em negrito */
 }
@@ -59,7 +56,7 @@
   margin-top: 10px; /* Adiciona margem superior */
   margin-left: 100px; /* Adiciona margem à esquerda */
   border-radius: 20px; /* Adiciona bordas arredondadas */
-  font-weight: 50px; /* Define o peso da fonte */
+  font-weight: bold; /* Define o peso da fonte */
 }
 
 .remove-product-button:hover {
@@ -174,6 +171,68 @@
 }
 
 /* Media Queries para responsividade */
+
+/* Para telas muito pequenas (200px e maiores) */
+@media (max-width: 200px) {
+  .cart-section {
+    width: 100%; /* Aumenta a largura para 100% */
+    right: -100%; /* Oculta a aba lateral */
+  }
+
+  .cart-section.open {
+    right: 0; /* Mostra a aba lateral */
+  }
+
+  .cart-header {
+    padding: 5px; /* Ajusta o padding */
+  }
+
+  .close-cart-button {
+    font-size: 0.75rem; /* Reduz o tamanho da fonte */
+  }
+
+  .purchase-button {
+    font-size: 0.75rem; /* Ajusta o tamanho da fonte do botão de compra */
+  }
+
+  .cart-table {
+    font-size: 0.75rem; /* Reduz o tamanho da fonte da tabela */
+  }
+
+  .product-qtd-input {
+    width: 40px; /* Reduz a largura do campo de input */
+  }
+
+  .button-group button {
+    font-size: 0.75rem; /* Reduz o tamanho da fonte dos botões */
+  }
+}
+
+/* Para telas pequenas (até 480px) */
+@media (max-width: 480px) {
+  .cart-header {
+    flex-direction: column; /* Ajusta o layout para coluna em telas pequenas */
+    align-items: flex-start; /* Alinha os itens ao início */
+  }
+
+  .close-cart-button {
+    align-self: flex-end; /* Alinha o botão de fechar ao final */
+  }
+
+  .cart-table th, .cart-table td {
+    font-size: 0.875rem; /* Ajusta o tamanho da fonte em telas pequenas */
+  }
+
+  .product-qtd-input {
+    width: 50px; /* Reduz a largura do campo de input */
+  }
+
+  .button-group button {
+    font-size: 0.75rem; /* Reduz o tamanho da fonte dos botões */
+  }
+}
+
+/* Para telas médias (até 768px) */
 @media (max-width: 768px) {
   .cart-section {
     width: 100%; /* Aumenta a largura para 100% em telas menores */
@@ -197,17 +256,24 @@
   }
 }
 
-@media (max-width: 480px) {
-  .cart-header {
-    flex-direction: column; /* Ajusta o layout para coluna em telas muito pequenas */
-    align-items: flex-start; /* Alinha os itens ao início */
+/* Para telas grandes (a partir de 769px) */
+@media (min-width: 769px) {
+  .cart-table {
+    font-size: 1rem; /* Define o tamanho da fonte da tabela */
   }
 
-  .close-cart-button {
-    align-self: flex-end; /* Alinha o botão de fechar ao final */
+  .product-qtd-input {
+    width: 60px; /* Define a largura padrão do campo de input */
   }
 
-  .cart-table th, .cart-table td {
-    font-size: 0.875rem; /* Ajusta o tamanho da fonte em telas pequenas */
+  .button-group button {
+    font-size: 0.875rem; /* Define o tamanho padrão da fonte dos botões */
+  }
+}
+
+/* Para telas muito grandes (a partir de 1200px) */
+@media (min-width: 1200px) {
+  .cart-section {
+    width: 350px; /* Define a largura padrão para telas grandes */
   }
 }
