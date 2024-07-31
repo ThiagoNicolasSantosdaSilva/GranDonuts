@@ -136,24 +136,25 @@
   background-color: #fcacd3; /* Mantém a cor de fundo ao passar o mouse */
 }
 
+/* Estilo do botão do ícone de carrinho */
 .cart-icon-button {
-  width: 80px; /* Define a largura do botão */
-  height: 80px; /* Define a altura do botão */
+  width: 60px; /* Largura do botão ajustada para tamanho pequeno */
+  height: 60px; /* Altura do botão ajustada para tamanho pequeno */
   border: none; /* Remove a borda do botão */
-  background-color: #fff; /* Define a cor de fundo do botão */
-  border-radius: 20px; /* Adiciona bordas arredondadas ao botão */
-  position: relative; /* Permite o posicionamento absoluto do badge dentro do botão */
-  right: -50px; /* Ajusta a posição horizontal, se necessário */
+  background-color: #fff; /* Cor de fundo do botão */
+  border-radius: 20px; /* Bordas arredondadas */
+  position: relative; /* Permite o posicionamento absoluto do badge */
   display: flex; /* Usa flexbox para centralizar o ícone */
   align-items: center; /* Alinha o ícone verticalmente */
   justify-content: center; /* Alinha o ícone horizontalmente */
 }
 
 .cart-icon-button img {
-  width: 50px; /* Define a largura do ícone */
-  height: 50px; /* Define a altura do ícone */
+  width: 40px; /* Ajusta a largura do ícone */
+  height: 40px; /* Ajusta a altura do ícone */
 }
 
+/* Estilo do badge dentro do botão */
 .cart-badge {
   position: absolute; /* Usa posicionamento absoluto para o badge */
   top: 5px; /* Ajusta a posição do badge para cima */
@@ -170,10 +171,88 @@
   font-weight: bold; /* Define o peso da fonte */
 }
 
+/* Media Queries para Responsividade */
+
+/* Para telas muito pequenas (até 320px) */
+@media (max-width: 320px) {
+  .cart-icon-button {
+    width: 50px; /* Ajusta a largura para telas pequenas */
+    height: 50px; /* Ajusta a altura para telas pequenas */
+  }
+
+  .cart-icon-button img {
+    width: 30px; /* Ajusta a largura do ícone */
+    height: 30px; /* Ajusta a altura do ícone */
+  }
+
+  .cart-badge {
+    width: 15px; /* Ajusta a largura do badge */
+    height: 15px; /* Ajusta a altura do badge */
+    font-size: 12px; /* Ajusta o tamanho da fonte do badge */
+  }
+}
+
+/* Para telas pequenas (até 480px) */
+@media (max-width: 480px) {
+  .cart-icon-button {
+    width: 55px; /* Ajusta a largura para telas pequenas */
+    height: 55px; /* Ajusta a altura para telas pequenas */
+  }
+
+  .cart-icon-button img {
+    width: 35px; /* Ajusta a largura do ícone */
+    height: 35px; /* Ajusta a altura do ícone */
+  }
+
+  .cart-badge {
+    width: 18px; /* Ajusta a largura do badge */
+    height: 18px; /* Ajusta a altura do badge */
+    font-size: 14px; /* Ajusta o tamanho da fonte do badge */
+  }
+}
+
+/* Para telas médias (até 768px) */
+@media (max-width: 768px) {
+  .cart-icon-button {
+    width: 60px; /* Largura padrão para telas médias */
+    height: 60px; /* Altura padrão para telas médias */
+  }
+
+  .cart-icon-button img {
+    width: 40px; /* Largura padrão do ícone */
+    height: 40px; /* Altura padrão do ícone */
+  }
+
+  .cart-badge {
+    width: 20px; /* Largura padrão do badge */
+    height: 20px; /* Altura padrão do badge */
+    font-size: 16px; /* Tamanho padrão da fonte do badge */
+  }
+}
+
+/* Para telas grandes (até 992px) */
+@media (max-width: 992px) {
+  .cart-icon-button {
+    width: 60px; /* Largura padrão para telas grandes */
+    height: 60px; /* Altura padrão para telas grandes */
+  }
+
+  .cart-icon-button img {
+    width: 40px; /* Largura padrão do ícone */
+    height: 40px; /* Altura padrão do ícone */
+  }
+
+  .cart-badge {
+    width: 20px; /* Largura padrão do badge */
+    height: 20px; /* Altura padrão do badge */
+    font-size: 16px; /* Tamanho padrão da fonte do badge */
+  }
+}
+
 /* Media Queries para responsividade */
 
 /* Para telas muito pequenas (200px e maiores) */
-@media (max-width: 200px) {
+@media (max-width: 350px) {
   .cart-section {
     width: 100%; /* Aumenta a largura para 100% */
     right: -100%; /* Oculta a aba lateral */
@@ -183,24 +262,16 @@
     right: 0; /* Mostra a aba lateral */
   }
 
-  .cart-header {
-    padding: 5px; /* Ajusta o padding */
-  }
-
   .close-cart-button {
-    font-size: 0.75rem; /* Reduz o tamanho da fonte */
+    align-self: flex-end; /* Alinha o botão de fechar ao final */
   }
 
-  .purchase-button {
-    font-size: 0.75rem; /* Ajusta o tamanho da fonte do botão de compra */
-  }
-
-  .cart-table {
-    font-size: 0.75rem; /* Reduz o tamanho da fonte da tabela */
+  .cart-table th, .cart-table td {
+    font-size: 0.875rem; /* Ajusta o tamanho da fonte em telas pequenas */
   }
 
   .product-qtd-input {
-    width: 40px; /* Reduz a largura do campo de input */
+    width: 50px; /* Reduz a largura do campo de input */
   }
 
   .button-group button {
@@ -210,10 +281,7 @@
 
 /* Para telas pequenas (até 480px) */
 @media (max-width: 480px) {
-  .cart-header {
-    flex-direction: column; /* Ajusta o layout para coluna em telas pequenas */
-    align-items: flex-start; /* Alinha os itens ao início */
-  }
+
 
   .close-cart-button {
     align-self: flex-end; /* Alinha o botão de fechar ao final */
